@@ -1,0 +1,19 @@
+# Node.js
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# Server logs
+logs/
+*.log
+
+# Environment variables
+.env
+
+# Build artifacts
+dist/
+build/
+
+# Miscellaneous
+.DS_Store
+Thumbs.db
