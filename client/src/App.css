@@ -27,6 +27,57 @@
 .App-link {
   color: #61dafb;
 }
+/* Chat Container */
+.chat-container {
+  width: 350px;
+  height: 500px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Messages Area */
+.messages {
+  flex-grow: 1;
+  padding: 10px;
+  overflow-y: auto;
+}
+
+/* Message Bubble */
+.message {
+  margin: 5px;
+  padding: 10px;
+  border-radius: 15px;
+  max-width: 70%;
+}
+
+/* User's Messages */
+.user-message {
+  background-color: #655fdb;
+  align-self: flex-end;
+}
+
+/* Bot's Messages */
+.bot-message {
+  background-color: #6eb5d3;
+}
+
+/* Input Area */
+.input-area {
+  padding: 10px;
+  border-top: 1px solid #ddd;
+}
+
+/* Input Field */
+.input-field {
+  width: 100%;
+  padding: 10px;
+  border-radius: 20px;
+  border: 1px solid #ccc;
+}
+
 
 @keyframes App-logo-spin {
   from {

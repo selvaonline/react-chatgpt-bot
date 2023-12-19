@@ -1,12 +1,13 @@
-// ChatMessage.js
-import React from 'react';
+import React from "react";
 
-function ChatMessage({ message }) {
+const ChatMessage = ({ message }) => {
+  const { text, user } = message;
+
   return (
-    <div className={`chat-message ${message.user ? 'user' : 'ai'}`}>
-      {message.text}
+    <div className={`chat-message ${user ? "user-message" : "ai-message"}`}>
+      <p className="message-text">{text}</p>
     </div>
   );
-}
+};
 
 export default ChatMessage;
