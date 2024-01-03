@@ -1,9 +1,12 @@
 import React, { useState } from "react";
 import ChatMessage from "./ChatMessage";
+// Import your spinner component here
+import Spinner from './Spinner'; // This is an example. Adjust based on your spinner component.
 
 function ChatApp() {
   const [messages, setMessages] = useState([]);
   const [inputText, setInputText] = useState("");
+  const [isLoading, setIsLoading] = useState(false); // New loading state
 
   const handleInputChange = (e) => {
     setInputText(e.target.value);
@@ -11,6 +14,7 @@ function ChatApp() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setIsLoading(true); // Start loading
 
     // Send user message to the server
     const response = await fetch("/send-message", {
@@ -22,6 +26,7 @@ function ChatApp() {
     });
 
     const data = await response.json();
+    setIsLoading(false); // Stop loading
 
     // Update chat messages with the server's response
     setMessages([
@@ -38,6 +43,7 @@ function ChatApp() {
         {messages.map((message, index) => (
           <ChatMessage key={index} message={message} />
         ))}
+        {isLoading && <Spinner />} {/* Display the spinner when loading */}
       </div>
       <form onSubmit={handleSubmit}>
         <input type="text" value={inputText} onChange={handleInputChange} />
